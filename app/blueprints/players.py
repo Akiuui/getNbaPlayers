@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify, request, abort
 import logging
 import os
 
-from services import fetchAndSavePlayers
+from services import fetchAndSavePlayers, getRosterById, getRoster
 
 players_bp = Blueprint("nba", __name__)
 
@@ -23,4 +23,13 @@ def populate():
 @players_bp.route("/getRoster", methods=["GET"])
 def getRoster():
 
-    return jsonify({"Success": "Elements"}), 200
+    teamId = request.args.get("teamId", "").strip()
+
+    if teamId == "" or not teamId:
+        abort(400, description="teamId is required")
+        # print("asd")
+        # roster = getRoster()
+    else:
+        roster = getRosterById(teamId)
+
+    return jsonify(roster), 200
