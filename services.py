@@ -1,6 +1,6 @@
 from flask import jsonify, abort
 from pymongo import MongoClient, errors
-from static.staticIdsByCode import teamIdByCode
+from staticIdsByCode import teamIdByCode
 from fetchers import fetchRoster
 from formatter import formatPlayer
 import logging
