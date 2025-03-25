@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 import logging
 
-from asd.players import players_bp
+from playersBlueprint import players_bp
 
 load_dotenv()
 
