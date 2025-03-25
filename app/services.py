@@ -14,6 +14,7 @@ def ConnectToMongo():
         return jsonify({"error": "Could not connect to MongoDB"}), 500
 
     return client
+
 def getRoster():
     logging.info("Trying to connect to Mongo")
     client = ConnectToMongo()

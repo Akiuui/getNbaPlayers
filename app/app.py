@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 import logging
 
-from blueprints.players import players_bp
+from asd.players import players_bp
 
 load_dotenv()
 
@@ -19,5 +19,5 @@ app.register_blueprint(players_bp)
 if __name__=="__main__":
     from waitress import serve
     # app.run(debug=True)
-    port = int(os.environ.get("PORT", 8006))
+    port = int(os.environ.get("PORT", 8001))
     serve(app, host="0.0.0.0", port=port)

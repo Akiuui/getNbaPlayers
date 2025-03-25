@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify, request, abort
 import logging
 import os
 
-from services import fetchAndSavePlayers, getRosterById, getRoster
+from services import fetchAndSavePlayers, getRosterById
 
 players_bp = Blueprint("nba", __name__)
 
